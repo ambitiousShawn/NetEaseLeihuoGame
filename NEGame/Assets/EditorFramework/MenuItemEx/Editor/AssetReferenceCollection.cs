@@ -24,21 +24,6 @@ namespace Shawn.EditorFramework
     [Serializable]
     public class DeleteAssetData
     {
-        public string filePath = "Assets/Scenes/Sphere.prefab";
+        public string filePath;
     }
-
-
-    public class AssetReferenceCollection : IReferenceCollection
-    {
-        public void CollectionFiles(string[] checkFolderPath)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Init(List<CollectionData> refs)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
 }

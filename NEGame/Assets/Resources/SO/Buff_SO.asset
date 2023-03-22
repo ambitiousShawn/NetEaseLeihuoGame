@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77afd65718f05d54ab98b2b828d2114c, type: 3}
+  m_Name: Buff_SO
+  m_EditorClassIdentifier: 
+  Nodes:
+  - ID: 0
+    Type: 0
+    Name: "\u548C\u98CE\u5B88\u62A4"
+    Describtion: "\u54C8\u54C8"
+    Time: 16
+    Interval: 5
+  - ID: 1
+    Type: 1
+    Name: "\u70E7\u4F24"
+    Describtion: "\u6301\u7EED\u6263\u8840"
+    Time: 7
+    Interval: 2
+  - ID: 2
+    Type: 1
+    Name: "\u51BB\u4F24"
+    Describtion: "\u6301\u7EED\u6263\u8840"
+    Time: 7
+    Interval: 3

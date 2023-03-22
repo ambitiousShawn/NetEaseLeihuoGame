@@ -29,6 +29,7 @@ namespace Shawn.EditorFramework
             CreateDirIfNot("Audio/BGM");
             CreateDirIfNot("Audio/Sound");
             CreateDirIfNot("SO");
+            CreateDirIfNot("Prefab");
             AssetDatabase.Refresh();
             Debug.Log("常用目录已创建。");
         }
@@ -201,7 +202,7 @@ namespace Shawn.EditorFramework
 
         public const string scenePath = "Scenes";
 
-        [MenuItem(rootPath + "场景/01.添加当前场景")]
+        [MenuItem(rootPath + "场景/01.添加当前场景", priority = 2)]
         static void AddSceneSettings()
         {
             Dictionary<string,EditorBuildSettingsScene> scenes = new Dictionary<string, EditorBuildSettingsScene>();

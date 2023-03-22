@@ -5,7 +5,9 @@ using UnityEngine;
 namespace Shawn.EditorFramework
 {
 
-
+    /// <summary>
+    /// 对组件的功能扩展
+    /// </summary>
     public static class ComponentEx 
     {
         public static T GetOrAddComponent<T>(this Component self) where T : Component

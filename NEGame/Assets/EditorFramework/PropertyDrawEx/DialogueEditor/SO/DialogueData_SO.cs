@@ -8,7 +8,7 @@ namespace Shawn.EditorFramework
     /// <summary>
     /// 对话的可视化数据SO
     /// </summary>
-    [CreateAssetMenu(fileName = "Dialogue Data", menuName = "Dialogue/Create Dialogue")]
+    [CreateAssetMenu(fileName = "Dialogue Data", menuName = "SO/Create Dialogue")]
     public class DialogueData_SO : ScriptableObject
     {
         public List<DialogueNode> Nodes;
@@ -31,9 +31,10 @@ namespace Shawn.EditorFramework
     [Serializable]
     public class DialogueNode
     {
-        public int ID; //对话编号
+        public int Pos; //对话位置
         public DialogueNodeType Type; //对话类型
         public Sprite Avatar; //对话头像
+        [TextArea]
         public string Info; //对话内容
         public List<DialogueOption> Options; //选项
         public List<DialogueEvent> Events; //对话后的回调
@@ -42,9 +43,8 @@ namespace Shawn.EditorFramework
     [Serializable]
     public class DialogueOption
     {
-        public string OptionInfo; //选项的内容
-        public DialogueData_SO NextSO; //下一条对话(链表的指针域)
-        public int NextPos; //下一条对话节点的编号
+        public string Info; //选项的内容
+        public int Pos; //下一条对话节点的编号
     }
 
     [Serializable]
