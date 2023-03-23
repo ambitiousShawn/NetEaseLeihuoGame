@@ -42,6 +42,7 @@ namespace Shawn.ProjectFramework
     /*测试程序*/
         public void Tick()
         {
+            # region 测试
             if (Input.GetKeyDown(KeyCode.M))
             {
                 PanelManager.Instance.ShowPanel<BeginPanel>("BeginPanel");
@@ -57,21 +58,6 @@ namespace Shawn.ProjectFramework
             if (Input.GetKeyDown(KeyCode.V))
             {
                 DialogueManager.Instance.ShowDialogue(5);
-            }
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                BuffManager.Instance.AddBuff(0, ()=>
-                {
-                    Debug.Log("和风守护Buff已触发");
-                });
-                BuffManager.Instance.AddBuff(1, () =>
-                {
-                    Debug.Log("烧伤Debuff已触发");
-                });
-                BuffManager.Instance.AddBuff(2, () =>
-                {
-                    Debug.Log("冻伤Debuff已触发");
-                });
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -94,6 +80,7 @@ namespace Shawn.ProjectFramework
                     Debug.LogWarning("冻伤Debuff已触发");
                 });
             }
+            # endregion 测试
         }
 
         public BasePanel GetPanelByName (string panelName)

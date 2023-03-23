@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace Shawn.EditorFramework
 {
 
-    [CreateAssetMenu(fileName = "Buff Data", menuName = "SO/Create Buff")]
+    [CreateAssetMenu(fileName = "Buff_SO", menuName = "SO/Create Buff")]
     public class BuffData_SO : ScriptableObject
     {
         public List<BuffNode> Nodes;

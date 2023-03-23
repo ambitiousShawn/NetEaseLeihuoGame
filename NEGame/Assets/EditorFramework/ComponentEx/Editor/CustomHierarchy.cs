@@ -30,5 +30,27 @@ namespace Shawn.EditorFramework
                 select.Nodes[id].ID = id;
             }
         }
+
+        [MenuItem("CONTEXT/InventoryData_SO/序列化位置编号")]
+        static void SerializeID2()
+        {
+            Object tempObj = EditorUtility.InstanceIDToObject(Selection.activeInstanceID);
+            InventoryData_SO select = (InventoryData_SO)tempObj;
+            for (int id = 0; id < select.Nodes.Count; id++)
+            {
+                select.Nodes[id].ID = id;
+            }
+        }
+
+        [MenuItem("CONTEXT/TipData_SO/序列化位置编号")]
+        static void SerializeID3()
+        {
+            Object tempObj = EditorUtility.InstanceIDToObject(Selection.activeInstanceID);
+            TipData_SO select = (TipData_SO)tempObj;
+            for (int id = 0; id < select.Nodes.Count; id++)
+            {
+                select.Nodes[id].ID = id;
+            }
+        }
     }
 }

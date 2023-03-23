@@ -5,11 +5,13 @@ using UnityEngine.UI;
 public class MainUIPanel : BasePanel
 {
     private const string BUFF_PATH = "UI/Element/Buff";
+    private const string ITEM_PATH = "UI/Element/Item";
 
     private Scrollbar healthBar;
     private Scrollbar skillBar;
     private Button notes;
     private Transform buffFrame;
+    private Transform itemFrame;
 
     public override void Show()
     {
@@ -19,10 +21,11 @@ public class MainUIPanel : BasePanel
         skillBar = GetControl<Scrollbar>("SkillBar");
         notes = GetControl<Button>("Notes");
         buffFrame = transform.Find("LeftTop/BuffFrame");
+        itemFrame = transform.Find("Bottom/Bag/Grids");
 
         notes.onClick.AddListener(() =>
         {
-            //TODO:点击notes显示的功能逻辑
+            TipManager.Instance.ShowRandomTip();
         });
     }
 
@@ -54,6 +57,24 @@ public class MainUIPanel : BasePanel
             buff.transform.SetParent(buffFrame);
             buff.transform.localScale = Vector3.one;
             //TODO：修改buff的Image组件的贴图
+        }
+    }
+
+    public void UpdateInventoryItem()
+    {
+        GameObject item;
+        for (int i = 0;i < itemFrame.childCount; i++)
+        {
+            Destroy(itemFrame.GetChild(i).gameObject);
+        }
+
+        foreach (string name in InventoryManager.Instance.ItemDic.Keys)
+        {
+            item = ResourcesManager.Instance.Load<GameObject>(ITEM_PATH);
+            item.transform.SetParent(itemFrame);
+            item.transform.localScale = Vector3.one;
+            item.GetComponentInChildren<Text>().text = InventoryManager.Instance.ItemNum[name].ToString();
+            //TODO:修改Item的Image贴图组件
         }
     }
 }

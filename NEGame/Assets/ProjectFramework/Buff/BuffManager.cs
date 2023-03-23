@@ -49,6 +49,9 @@ namespace Shawn.ProjectFramework
             }
         }
 
+        /// <summary>
+        /// Ö¡¸üÐÂ
+        /// </summary>
         public void Tick()
         {
             if (buffDic.Count <= 0) return;
