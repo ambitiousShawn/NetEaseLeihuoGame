@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,7 +9,8 @@ using UnityEngine.UI;
 
 namespace Shawn.EditorFramework
 {
-    public class AssetCollector 
+
+    public class AssetCollector
     {
         public List<string> deleteFileList = new List<string>(); //待删除文件列表
         public List<CollectionData> referenceCollection = new List<CollectionData>(); //文件的引用相关数据集
@@ -30,7 +30,7 @@ namespace Shawn.EditorFramework
                 deleteFileList.Add(AssetDatabase.AssetPathToGUID(path));
             }
 
-            
+
             EditorUtility.DisplayProgressBar("检查是否引用", "排除部分后缀名", 0.3f);
             UnregisterIgnoreExtension();
 
@@ -41,6 +41,10 @@ namespace Shawn.EditorFramework
             UnregisterPrefab();
 
             EditorUtility.ClearProgressBar();
+        }
+        public class ABCDEFG
+        {
+
         }
 
         private List<string> GetAllCheckFiles(string[] collectionFolders)
@@ -71,12 +75,12 @@ namespace Shawn.EditorFramework
         private void UnregisterIgnoreExtension()
         {
             List<string> tempDeleteList = new List<string>();
-            for (int i = 0;i < deleteFileList.Count; i++)
+            for (int i = 0; i < deleteFileList.Count; i++)
             {
                 if (deleteFileList[i] != null)
                 {
                     //拿到对应文件的扩展名
-                    string extension = Path.GetExtension(Path.GetFileName(AssetDatabase.GUIDToAssetPath(deleteFileList[i]))); 
+                    string extension = Path.GetExtension(Path.GetFileName(AssetDatabase.GUIDToAssetPath(deleteFileList[i])));
                     if (extension != null && ignoreExtension.Contains(extension.ToLower()))
                     {
                         tempDeleteList.Add(deleteFileList[i]);
@@ -100,16 +104,16 @@ namespace Shawn.EditorFramework
                 .Select(item => item.path)
                 .ToArray();
 
-            foreach (string path in AssetDatabase.GetDependencies(scenes))
+            foreach (string path in AssetDatabase.GetDependencies(scenes, true))
             {
                 UnregisterFromDeleteList(AssetDatabase.AssetPathToGUID(path));
             }
         }
         private void UnregisterPrefab()
         {
-            string[] folderArr = new string[] { "Assets/Resources", "Assets/Prefab"  };
+            string[] folderArr = new string[] { "Assets/Resources", "Assets/Prefab" };
             string[] prefabGidList = AssetDatabase.FindAssets("t:prefab", folderArr); //找到所有预制体
-            
+
             foreach (string gid in prefabGidList)
             {
                 string filePath = AssetDatabase.GUIDToAssetPath(gid);
@@ -138,6 +142,8 @@ namespace Shawn.EditorFramework
             }
         }
     }
+
+
+
+
 }
-
-

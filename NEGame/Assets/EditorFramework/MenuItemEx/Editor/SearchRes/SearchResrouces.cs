@@ -7,7 +7,7 @@ namespace Shawn.EditorFramework
 
     public class SearchResroucesWindow : EditorWindow
     {
-        [MenuItem("Universal Tools/资源/02.通过GUID查找资源 #/", false, 0)]
+        [MenuItem("Universal Tools/资源/03.通过GUID查找资源 #/", false, 0)]
         static void FindAssetsByGUID()
         {
             EditorWindow window = EditorWindow.GetWindowWithRect(typeof(SearchResroucesWindow), new Rect(100, 100, 600, 170));

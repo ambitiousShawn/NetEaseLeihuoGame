@@ -80,6 +80,12 @@ namespace Shawn.EditorFramework
             Application.OpenURL("https://baidu.com");
         }
 
+        [MenuItem(rootPath + "ÍøÒ³/03.BÕ¾")]
+        static void OpenBilibili()
+        {
+            Application.OpenURL("https://bilibili.com");
+        }
+
         #endregion
 
         #region Batch Operation
