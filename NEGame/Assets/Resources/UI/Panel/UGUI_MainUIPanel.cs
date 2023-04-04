@@ -71,10 +71,11 @@ namespace Shawn.ProjectFramework
                 Destroy(itemFrame.GetChild(i).gameObject);
             }
 
-            foreach (string name in InventoryManager.Instance.ItemDic.Keys)
+            foreach (string name in InventoryManager.Instance.ItemDicFromBag.Keys)
             {
                 item = ResourcesManager.Instance.Load<GameObject>(ITEM_PATH);
                 item.transform.SetParent(itemFrame);
+                item.name = name;
                 item.transform.localScale = Vector3.one;
                 item.GetComponentInChildren<Text>().text = InventoryManager.Instance.ItemNum[name].ToString();
                 //TODO:修改Item的Image贴图组件

@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7389502079631866747}
   - component: {fileID: 7389502079631866741}
-  - component: {fileID: 3388978630675277682}
+  - component: {fileID: 7291044302623166531}
   m_Layer: 5
   m_Name: UGUI_TipPanel
   m_TagString: Untagged
@@ -354,7 +354,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7389502079631866746}
   m_CullTransparentMesh: 1
---- !u!114 &3388978630675277682
+--- !u!114 &7291044302623166531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7389502079631866746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5426d5f59b1fdc4e9e80e0938e8aa86, type: 3}
+  m_Script: {fileID: 11500000, guid: 16c6a98b56513a64eb1759c52fba296c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7389502079678259589

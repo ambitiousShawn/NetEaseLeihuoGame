@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 3529012659305094649}
   - component: {fileID: 7621703863583168164}
   - component: {fileID: 3499198391329863384}
-  - component: {fileID: 9047244917636137394}
+  - component: {fileID: 430555373550462758}
   m_Layer: 5
   m_Name: UGUI_DialoguePanel
   m_TagString: Untagged
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9047244917636137394
+--- !u!114 &430555373550462758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,6 +241,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6542541415685748812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5772452aef52fa245893a0ab87881ef2, type: 3}
+  m_Script: {fileID: 11500000, guid: adf2bbf5c221fde49a0b993e53116053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

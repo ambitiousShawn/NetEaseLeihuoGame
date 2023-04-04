@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2458319494055816939}
   - component: {fileID: 5620553522572043334}
-  - component: {fileID: 1588735151411989551}
+  - component: {fileID: 3260761458593617532}
   m_Layer: 5
   m_Name: UGUI_BeginPanel
   m_TagString: Untagged
@@ -51,7 +51,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2222933425153072967}
   m_CullTransparentMesh: 1
---- !u!114 &1588735151411989551
+--- !u!114 &3260761458593617532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2222933425153072967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f6cedde67f07c7498cd48267c94e5a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cff8b1d9b9be9a4aaa54fb8009c08ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2478196228417064059
