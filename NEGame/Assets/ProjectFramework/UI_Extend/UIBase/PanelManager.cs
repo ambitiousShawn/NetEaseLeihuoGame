@@ -14,7 +14,7 @@ namespace Shawn.ProjectFramework
     /// </summary>
     public class PanelManager : IBaseManager
     {
-        public const string UI_Panel_Path = "UI/Panel/";
+        public const string UI_Panel_Path = "Core/Panel/";
         public const string UI_Base_Path = "UI/";
         public static PanelManager Instance;
         private bool m_IsInit;
