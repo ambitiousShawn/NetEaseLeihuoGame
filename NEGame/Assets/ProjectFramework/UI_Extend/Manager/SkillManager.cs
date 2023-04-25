@@ -13,7 +13,7 @@ namespace Shawn.ProjectFramework
         public Dictionary<string, SkillNode> currSkillDic = new Dictionary<string, SkillNode>();
         public List<SkillNode> tempSkillList;
 
-        private UGUI_SkillPanel panel;
+        
 
         public void Init()
         {
@@ -25,15 +25,15 @@ namespace Shawn.ProjectFramework
 
         public void Tick()
         {
-            if (panel == null) panel = PanelManager.Instance.GetPanelByName("UGUI_SkillPanel") as UGUI_SkillPanel;
+            
             if (Input.GetKeyDown(KeyCode.F))
             {
-                PanelManager.Instance.ShowPanel<UGUI_SkillPanel>("UGUI_SkillPanel");
+            
             }
             if (Input.GetKeyDown(KeyCode.G))
             {
                 InitAllSkills();
-                panel.UpdateSkillList();
+                
             }
 
         }

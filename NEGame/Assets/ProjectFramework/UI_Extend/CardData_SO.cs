@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,14 +28,29 @@ namespace Shawn.ProjectFramework
         public string Name;
         public string Describtion;
         public UnityAction Effect;
-        public List<NextInfo> NextList;
+        public List<Options> NextList;
+        public List<int> SubCardID;
     }
 
     [Serializable]
-    public class NextInfo
+    public class Options
     {
-        public int subID;
         public string Text;
         public int TargetID;
+    }
+
+    
+    public class EidtorCustom
+    {
+        [MenuItem("CONTEXT/CardData_SO/–Ú¡–ªØŒª÷√±‡∫≈")]
+        static void SerializeID4()
+        {
+            System.Object tempObj = EditorUtility.InstanceIDToObject(Selection.activeInstanceID);
+            CardData_SO select = (CardData_SO)tempObj;
+            for (int id = 0; id < select.Nodes.Count; id++)
+            {
+                select.Nodes[id].ID = id;
+            }
+        }
     }
 }

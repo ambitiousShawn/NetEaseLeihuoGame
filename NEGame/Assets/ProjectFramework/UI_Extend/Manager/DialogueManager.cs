@@ -52,7 +52,7 @@ namespace Shawn.ProjectFramework
 
             if (temp == null)
             {
-                PanelManager.Instance.ShowPanel<UGUI_DialoguePanel>("UGUI_DialoguePanel");
+                
             }
         }
 
@@ -67,7 +67,7 @@ namespace Shawn.ProjectFramework
             //如果文字正在滚动，将文字补全
             if (m_isRolling)
             {
-                (temp as UGUI_DialoguePanel).UpdateInfo(tempList[pos].Info);
+                
                 m_isRolling = false;
                 MonoManager.Instance.StopAllCoroutines();
                 return;
@@ -86,7 +86,7 @@ namespace Shawn.ProjectFramework
 
             if (!m_Roll)
             {
-                (temp as UGUI_DialoguePanel).UpdateInfo(tempList[pos].Info);
+                
             }
             else
             {
@@ -97,10 +97,10 @@ namespace Shawn.ProjectFramework
         public IEnumerator RollText (BasePanel temp)
         {
             m_isRolling = true;
-            (temp as UGUI_DialoguePanel).UpdateInfo("");
+            
             foreach (char c in dialogue_SO.Nodes[pos].Info)
             {
-                (temp as UGUI_DialoguePanel).AppendInfo(c);
+                
                 yield return new WaitForSeconds(0.05f);
             }
             m_isRolling = false;

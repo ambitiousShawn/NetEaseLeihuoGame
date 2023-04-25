@@ -6,10 +6,18 @@ using UnityEngine;
 
 public class Launcher : MonoBehaviour
 {
+    private readonly List<IBaseManager> managers = new List<IBaseManager>();
+
     private void Awake()
     {
-        new PanelManager().Init();
-        new CardProcessManager().Init();
+        managers.Add(new PanelManager());
+        managers.Add(new CardProcessManager());
+        managers.Add(new Interaction());
+
+        for (int i = 0; i < managers.Count; i++)
+        {
+            managers[i]?.Init();
+        }
     }
 
     void Start()
@@ -19,6 +27,9 @@ public class Launcher : MonoBehaviour
 
     void Update()
     {
-        
+        for (int i = 0;i < managers.Count;i++)
+        {
+            managers[i]?.Tick();
+        }
     }
 }

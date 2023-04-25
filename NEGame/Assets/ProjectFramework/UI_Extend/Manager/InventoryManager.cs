@@ -17,8 +17,6 @@ namespace Shawn.ProjectFramework
 
         public List<ItemNode> itemList;
 
-        private UGUI_MainUIPanel BagPanel;
-        private UGUI_WarehousePanel HousePanel;
 
         public void Init()
         {
@@ -27,41 +25,7 @@ namespace Shawn.ProjectFramework
         }
 
         public void Tick()
-        {
-            if (BagPanel == null) BagPanel = PanelManager.Instance.GetPanelByName("UGUI_MainUIPanel") as UGUI_MainUIPanel;
-            if (HousePanel == null) HousePanel = PanelManager.Instance.GetPanelByName("UGUI_WarehousePanel") as UGUI_WarehousePanel;
-
-            //Test
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                AddItemToBag(0, 2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                AddItemToBag(1, 3);
-            }
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                AddItemToBag(2, 5);
-            }
-            if (Input.GetKeyDown(KeyCode.U))
-            {
-                ConsumeItem("蓝水晶");
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                PanelManager.Instance.ShowPanel<UGUI_WarehousePanel>("UGUI_WarehousePanel");
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                TransferItem(1, E_TransferType.FromBagToHouse);
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                TransferItem(1, E_TransferType.FromHouseToBag);
-            }
-            
+        {            
         }
 
         /// <summary>
@@ -71,7 +35,6 @@ namespace Shawn.ProjectFramework
         /// <param name="num"></param>
         public void AddItemToBag(int id, int num = 1)
         {
-            if (BagPanel == null) return;
 
             ItemNode item = itemList[id];
 
@@ -84,7 +47,7 @@ namespace Shawn.ProjectFramework
             {
                 ItemNum[item.Name] += num;
             }
-            BagPanel.UpdateInventoryItem();
+            
         }
 
         public enum E_TransferType
@@ -95,32 +58,29 @@ namespace Shawn.ProjectFramework
 
         public void TransferItem (int id, E_TransferType type)
         {
-            if (BagPanel == null || HousePanel == null) return;
+            
 
             ItemNode item = itemList[id];
             if (type == E_TransferType.FromBagToHouse)
             {
                 //背包相关操作
                 ItemDicFromBag.Remove(item.Name);
-                BagPanel.UpdateInventoryItem();
                 //仓库相关操作
                 ItemDicFromHouse.Add(item.Name, item);
-                HousePanel.UpdateHouseItem();
+                
             }
             else if (type == E_TransferType.FromHouseToBag)
             {
                 //背包相关操作
                 ItemDicFromBag.Add(item.Name, item);
-                BagPanel.UpdateInventoryItem();
+                
                 //仓库相关操作
                 ItemDicFromHouse.Remove(item.Name);
-                HousePanel.UpdateHouseItem();
             }
         }
 
         public void ConsumeItem(string name, int num = 1)
         {
-            if (BagPanel == null) return;
 
             if (ItemNum.ContainsKey(name))
             {
@@ -130,7 +90,6 @@ namespace Shawn.ProjectFramework
                     ItemDicFromBag.Remove(name);
                     ItemNum.Remove(name);
                 }
-                BagPanel.UpdateInventoryItem();
             }
         }
     }

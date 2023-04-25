@@ -34,7 +34,7 @@ namespace Shawn.ProjectFramework
         private List<string> deleteBuff = new List<string>();
         private List<BuffNode> buffList;
 
-        private UGUI_MainUIPanel panel;
+        
 
         public void Init()
         {
@@ -85,7 +85,7 @@ namespace Shawn.ProjectFramework
                 string deleteName = deleteBuff[i];
                 buffDic.Remove(deleteName);
                 deleteBuff.Remove(deleteName);
-                if (panel != null) panel.UpdateBuffFrame();
+                
             }
         }
 
@@ -103,9 +103,7 @@ namespace Shawn.ProjectFramework
             if (!buffDic.ContainsKey(node.Name))
             {
                 buffDic.Add(node.Name, node);
-                panel = PanelManager.Instance.GetPanelByName("UGUI_MainUIPanel") as UGUI_MainUIPanel;
-                if (panel != null)
-                    panel.UpdateBuffFrame();
+                
             }
             else
             {

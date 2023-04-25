@@ -39,7 +39,7 @@ namespace Shawn.ProjectFramework
         /// <param name="targetPos">跳转到第一条回复位置即填入0，以此类推累加即可。</param>
         public void JumpToPosition(int targetNum)
         {
-            NextInfo nextInfo = nodes[pos].NextList[targetNum];
+            Options nextInfo = nodes[pos].NextList[targetNum];
             JumpToAllPosition(nextInfo.TargetID);
         }
 
